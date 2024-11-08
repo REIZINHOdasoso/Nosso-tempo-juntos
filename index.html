@@ -5,43 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosso Tempo Juntos</title>
     <style>
+        /* Fonte personalizada romântica */
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: Arial, sans-serif;
-            background-color: #ffb6c1; /* Fundo rosa */
+            font-family: 'Great Vibes', cursive;
+            background-color: #ffb6c1; /* Cor de fundo rosa */
+            background-image: url('https://i.pinimg.com/564x/f8/e5/80/f8e5809bb8ba0401502ccff25202fbe8.jpg'); /* URL da imagem de fundo com corações e ursinhos */
+            background-size: cover;
+            background-repeat: no-repeat;
             margin: 0;
         }
+
         #container {
             text-align: center;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semitransparente para destacar o conteúdo */
+            padding: 20px;
+            border-radius: 15px;
         }
+
+        #foto {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 4px solid #fff;
+        }
+
+        #nomes {
+            font-size: 2em;
+            color: #ff69b4;
+            margin: 10px 0;
+        }
+
         #tempo {
             font-size: 1.5em;
             color: #333;
             margin-top: 20px;
         }
-        #foto {
-            width: 200px; /* Tamanho da foto, ajustável */
-            height: 200px;
-            border-radius: 50%; /* Deixa a imagem circular */
-            object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
-            margin-bottom: 20px;
-            border: 4px solid #fff; /* Borda branca ao redor da imagem */
-        }
     </style>
 </head>
 <body>
-<script>
-    let senha = prompt("Digite a senha para acessar:");
-    if (senha !== "RogerLindao2804") {  // Defina a senha desejada aqui
-        alert("Senha incorreta!");
-        window.location.href = "https://google.com";  // Redireciona se a senha estiver errada
-    }
-</script>
+    <script>
+        // Script de proteção por senha
+        let senha = prompt("Digite a senha para acessar:");
+        if (senha !== "RogerLindao2804") {  // Substitua "minhaSenha123" pela senha desejada
+            alert("Senha incorreta!");
+            window.location.href = "https://google.com";  // Redireciona para outra página se a senha estiver incorreta
+        }
+    </script>
+
     <div id="container">
         <img id="foto" src="Screenshot_1.jpg" alt="Foto nossa">
+        <div id="nomes">Igor e Sofia</div>
         <h1>Estamos juntos há:</h1>
         <p id="tempo"></p>
     </div>

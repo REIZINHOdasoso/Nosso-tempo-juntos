@@ -14,7 +14,7 @@
             height: 100vh;
             font-family: 'Great Vibes', cursive;
             background-color: #ffb6c1; /* Cor de fundo rosa */
-            background-image: url('https://i.pinimg.com/564x/f8/e5/80/f8e5809bb8ba0401502ccff25202fbe8.jpg'); /* URL da imagem de fundo com corações e ursinhos */
+            background-image: url('fundo.png'); /* Substitua pelo caminho do arquivo de fundo */
             background-size: cover;
             background-repeat: no-repeat;
             margin: 0;
@@ -26,6 +26,7 @@
             background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semitransparente para destacar o conteúdo */
             padding: 20px;
             border-radius: 15px;
+            width: 300px;
         }
 
         #foto {
@@ -48,6 +49,11 @@
             color: #333;
             margin-top: 20px;
         }
+
+        #extraFoto {
+            width: 100%;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -65,6 +71,8 @@
         <div id="nomes">Igor e Sofia</div>
         <h1>Estamos juntos há:</h1>
         <p id="tempo"></p>
+        <!-- Imagem extra abaixo do contador -->
+        <img id="extraFoto" src="fofinhos.jpg" alt="Imagem extra">
     </div>
     
     <script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Tempo Juntos</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #ffb6c1; /* Fundo rosa */
+            margin: 0;
+        }
+        #container {
+            text-align: center;
+        }
+        #tempo {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 20px;
+        }
+        #foto {
+            width: 200px; /* Tamanho da foto, ajustável */
+            height: 200px;
+            border-radius: 50%; /* Deixa a imagem circular */
+            object-fit: cover; /* Ajusta a imagem para cobrir o espaço */
+            margin-bottom: 20px;
+            border: 4px solid #fff; /* Borda branca ao redor da imagem */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="foto" src="Screenshot_1.jpg" alt="Foto nossa">
+        <h1>Estamos juntos há:</h1>
+        <p id="tempo"></p>
+    </div>
+    
+    <script>
+        const dataInicio = new Date("2022-04-28"); // Data de início do relacionamento
+
+        function atualizarTempo() {
+            const agora = new Date();
+            let anos = agora.getFullYear() - dataInicio.getFullYear();
+            let meses = agora.getMonth() - dataInicio.getMonth();
+            let dias = agora.getDate() - dataInicio.getDate();
+            let horas = agora.getHours() - dataInicio.getHours();
+            let minutos = agora.getMinutes() - dataInicio.getMinutes();
+            let segundos = agora.getSeconds() - dataInicio.getSeconds();
+
+            if (segundos < 0) {
+                segundos += 60;
+                minutos--;
+            }
+            if (minutos < 0) {
+                minutos += 60;
+                horas--;
+            }
+            if (horas < 0) {
+                horas += 24;
+                dias--;
+            }
+            if (dias < 0) {
+                const ultimoDiaMesPassado = new Date(agora.getFullYear(), agora.getMonth(), 0).getDate();
+                dias += ultimoDiaMesPassado;
+                meses--;
+            }
+            if (meses < 0) {
+                meses += 12;
+                anos--;
+            }
+
+            document.getElementById("tempo").innerText = 
+                `${anos} anos, ${meses} meses, ${dias} dias, ${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+        }
+
+        setInterval(atualizarTempo, 1000);
+    </script>
+</body>
+</html>
